@@ -293,7 +293,7 @@ $('#parent-form').onsubmit=e=>{e.preventDefault();const tasks=editorTasks();if(!
 $('#try-now').onclick=()=>{if(!loaded)return;const next=plan().find(t=>!day().done.includes(t.id));activeId=next?.id??null;pinned=true;$('#parent-dialog').close();render();scrollActive();};
 
 
-const FOODS=[['pannkak','🥞'],['pasta','🍝'],['spagetti','🍝'],['korv','🌭'],['nugget','🍗'],['kyckling','🍗'],['fiskpinn','🐟'],['fisk','🐟'],['köttbull','🍖'],['ris','🍚'],['potatis','🥔'],['pizza','🍕'],['soppa','🍲'],['ägg','🥚'],['gröt','🥣'],['grönsak','🥦'],['sallad','🥗'],['smörgås','🥪'],['hamburgare','🍔'],['tacos','🌮'],['pytt','🥔']];
+const FOODS=[['pannkak','🥞'],['pasta','🍝'],['spagetti','🍝'],['korv','🌭'],['nugget','🍗'],['kyckling','🍗'],['fiskpinn','🐟'],['fisk','🐟'],['köttbull','🧆'],['ris','🍚'],['potatis','🥔'],['pizza','🍕'],['soppa','🍲'],['ägg','🥚'],['gröt','🥣'],['grönsak','🥦'],['sallad','🥗'],['smörgås','🥪'],['hamburgare','🍔'],['tacos','🌮'],['pytt','🥔']];
 const foodEmoji=s=>(FOODS.find(([k])=>s.toLowerCase().includes(k))||[0,'🍽️'])[1];
 const MD=[[1,'Måndag'],[2,'Tisdag'],[3,'Onsdag'],[4,'Torsdag'],[5,'Fredag']];
 function mealEditors(){$('#parent-meals').innerHTML=MD.map(([d,n])=>`<label class="setting">${n} <input name="meal${d}" value="${esc((data.meals||{})[d]||'')}" maxlength="60" style="flex:1;min-width:10em"></label>`).join('');}
